@@ -11,8 +11,4 @@
     <Using Include="System.Console" Static="true" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="fundamentals\03-AdapterPattern\" />
-  </ItemGroup>
-
 </Project>
