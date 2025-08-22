@@ -1,10 +1,12 @@
 ﻿using CsBases.fundamentals;
 using CsBases.fundamentals._03_AdapterPattern;
 using CsBases.fundamentals._04_DependencyInjection;
+using CsBases.fundamentals._05_AsyncMethods;
+using System.Threading.Tasks;
 
 class Program
 {
-    static void Main()
+    static async Task Main()
     {
         // Creating Product Object
         var laptop = new Product("Asus TUF Gaming A15", 3500000);
@@ -28,6 +30,14 @@ class Program
 
         managerMonitor.PrintLabel(monitor);
         managerMonitor.PrintLabel(instalation);
+
+        // Sync methods
+        var firstProduct = new ProductRepository().GetProduct(1);
+        WriteLine($"\n{firstProduct.Name} - Price: ${firstProduct.Price}");
+
+        // Async methods
+        var secondProduct = await new ProductRepository().GetProductAsync(1);
+        WriteLine($"\n{secondProduct.Name} - Price: ${secondProduct.Price}");
 
     }
 }
