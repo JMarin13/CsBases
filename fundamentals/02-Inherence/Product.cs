@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CsBases.fundamentals._06_UpperCaseAttribute;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,6 +10,7 @@ namespace CsBases.fundamentals
     public class Product : IProduct
     {
         public int Id { get; set; }
+        [UpperCase]
         public string? Name { get; set; }
         public double Price { get; set; }
         public bool IsAvailable { get; set; }

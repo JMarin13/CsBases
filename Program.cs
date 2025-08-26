@@ -2,6 +2,7 @@
 using CsBases.fundamentals._03_AdapterPattern;
 using CsBases.fundamentals._04_DependencyInjection;
 using CsBases.fundamentals._05_AsyncMethods;
+using CsBases.fundamentals._06_UpperCaseAttribute;
 using System.Threading.Tasks;
 
 class Program
@@ -38,6 +39,11 @@ class Program
         // Async methods
         var secondProduct = await new ProductRepository().GetProductAsync(1);
         WriteLine($"\n{secondProduct.Name} - Price: ${secondProduct.Price}");
+
+        // Apply procesor attributes
+        var thirdProduct = await new ProductRepository().GetProductAsync2(1);
+        AttributeProcesor.ApplyUpperCase(thirdProduct);
+        WriteLine($"\n{thirdProduct.Name} - Price: ${thirdProduct.Price}");
 
     }
 }
