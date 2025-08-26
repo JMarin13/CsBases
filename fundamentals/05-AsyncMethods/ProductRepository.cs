@@ -22,5 +22,13 @@ namespace CsBases.fundamentals._05_AsyncMethods
 
             return new Product("Simulated product 2", 255000);
         }
+
+        public async Task<Product> GetProductAsync2(int id)
+        {
+            WriteLine("\nSearching product...");
+            await Task.Delay(2000);
+
+            return new Product("Simulated product 3", 500000);
+        }
     }
 }
